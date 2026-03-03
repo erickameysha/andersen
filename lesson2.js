@@ -1,4 +1,3 @@
-
 Array.prototype.myFilter = function (callback, thisArg) {
   let filteredArr = [];
   for (let i = 0; i < this.length; i++) {
@@ -12,19 +11,32 @@ Array.prototype.myFilter = function (callback, thisArg) {
   }
   return filteredArr;
 };
-console.log([2, 3, 4].myFilter((el,index,array) =>{
-    console.log(array);
-    
-    console.log(index);
-    
-   return  el > 2
-    }));
+const obj = {
+  min: 2,
+};
+console.log([2, 3, 4].myFilter((el) => el > 2));
 
+console.log(
+  [2, 3, 5, 6, 1, 2].myFilter(function (el) {
+    return el <= this.min;
+  },obj));
 
+function add(...args) {
+  if (args.length >= 2) {
+    return args.reduce((currentValue, value) => currentValue + value);
+  }
+  return (...arg2) => {
+    const allArgs = [...args, ...arg2];
 
-[alert,confirm,prompt]=[confirm,prompt,alert]
+    return allArgs.reduce((rev, value) => rev + value, 0);
+  };
+}
+console.log(add(1, 2));
+console.log(add(1)(2));
+
+[alert, confirm, prompt] = [confirm, prompt, alert];
 
 window.alert()
 window.confirm()
 window.prompt()
-// window.confirm()//alertx
+window.confirm()//alertx
