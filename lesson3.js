@@ -82,4 +82,28 @@ const reversedReduce = (arr) => {
 };
 console.log(reversedReduce([1, 2, 3]));
 
+const myLiteral = {from:5,to:4}
+myLiteral[Symbol.iterator]=function(){
+    
+let {from, to} = this
+  if(!Number.isFinite(from) || !Number.isFinite(to) ){
+   throw new Error('values must be numbers')
+  }
+  if (from>to){
+    throw new Error('From more then to')
+  }
+return{
+    next(){
+        if(from <=to){
+            return{done: false, value: from++}
+        }else{
+            return{done:true}
+        }
+    }
+}
+}
+for (let key of myLiteral) {
+  console.log(key);
+   
+}
 
