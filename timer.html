@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timer</title>
+    <style>
+      .container {
+        display: flex;
+        /* margin: 50% 0; */
+        justify-content: center;
+        gap: 10px;
+      }
+      .startButton {
+        background-color: rgb(137, 191, 137);
+        padding: 10px 10px;
+        border: 1px solid;
+      }
+      .stopButton {
+        background-color: rgb(166, 39, 39);
+        padding: 10px 10px;
+        border: 1px solid;
+      }
+      .resetButton {
+        background-color: rgb(127, 126, 136);
+        padding: 10px 10px;
+        border: 1px solid;
+      }
+      .wrapper {
+        border: 1px solid;
+        padding: 10px;
+      }
+      input {
+        width: 50px;
+      }
+      .controlPanel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <h1>Stop watch</h1>
+        <p id="time">00:00:00</p>
+        <button class="startButton" id="start">start</button>
+        <button class="stopButton" id="stop">stop</button>
+        <button class="resetButton" id="reset">reset</button>
+      </div>
+      <div class="wrapper">
+        <h1>Timer</h1>
+        <p id="timer">00:00</p>
+        <div class="controlPanel">
+          <div class="inputs">
+            <input type="text" id="timer-minute" placeholder="min" />
+            <input type="text" id="timer-second" placeholder="sec" />
+          </div>
+          <div class="buttons">
+            <button class="startButton" id="start-timer">start</button>
+            <button class="stopButton" id="stop-timer">stop</button>
+            <button class="resetButton" id="reset-timer">reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="timer.js"></script>
+  </body>
+</html>
